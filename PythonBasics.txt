@@ -1,3 +1,7 @@
+
+Link: https://www.freecodecamp.org/news/whats-in-a-python-s-name-506262fe61e8/
+
+
 An introduction to the _ _name_ _ variable and its usage in Python
 You’ve most likely seen the __name__ variable when you’ve gone through Python 
 code. Below you see an example code snippet of how it may look:
@@ -7,3 +11,90 @@ if __name__ == "__main__":     main()
 The following article explains how you can use the variable to create a  module
 in python
 
+_______________________________________________________________________________
+
+1. Why is the __name__ variable used ?
+   
+   the __name__ variable( two unserscores left and two underscore right ) is a 
+   special python variable that gets its value depending on how we execute the
+   containing script.
+   
+   Sometimes we write python scripts that has functions that can be useful and 
+   used in other scripts as well. 
+   In python we van import those scripts as modules in other scripts.
+   
+   Thanks to this special variable we can decide whether to run the script or
+   use it as a module to be imported to another scripts.(i.e import the 
+   functions define to other scripts )
+   
+_______________________________________________________________________________
+
+2. What values can the __name__ variable contain ?
+
+   When we run our script, the __name__ variable contains main(). When we want
+   to use it to import a  module, the __name__ variable contains the name of 
+   the script.
+   
+   Lets go through the following scenareos:
+   
+   1. Run the script standalone
+   
+       Lets us consider we have written a python script namescript.py and we 
+       want to run it.
+       
+       ################### namescript.py ####################
+       
+       def foo():   print("The name of the __name__ variable is "+__name__)
+       
+       if __name__ == "__main__":
+           main()
+           
+       def main():
+           foo()
+           
+       #######################################################
+       OUTPUT: The name of the __name__ variable is __main__
+       
+       
+       
+       once we run namescript.py the following process is followed.
+       
+       1. Set the variable __name__ to __main__
+       
+       2. Run def statements for main and foo 
+       
+       3. Condition with __name__ evaluates to true
+       
+       4. Execute main()
+       
+       5. Execute foo()
+       
+       6. Output - The name of the __name__ variable is __main__
+       
+       
+       Before all other code is run, the __name__ variable is set to __main__. 
+       After that, the main and myFunction def statements are run. 
+       Because the condition evaluates to true, the main function is called. 
+       This, in turn, calls myFunction. This prints out the value of __main__.
+       
+   2. Import the script in another script
+   
+       Let us consider a scenareo where we want to run the script in another 
+       script by importing.
+       Eaxample we want to reuse function foo in another script. Let us create 
+       two scripts exportingfoo.py and importingfoo.py
+       
+       ################## importingfoo.py #######################
+       
+       import exportingfoo as ef
+       
+       ef.foo()
+       
+       
+       
+   
+   
+   
+   
+    
+   
