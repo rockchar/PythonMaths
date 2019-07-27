@@ -1,0 +1,9 @@
+An introduction to the _ _name_ _ variable and its usage in Python
+You’ve most likely seen the __name__ variable when you’ve gone through Python 
+code. Below you see an example code snippet of how it may look:
+
+if __name__ == "__main__":     main()
+
+The following article explains how you can use the variable to create a  module
+in python
+
