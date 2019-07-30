@@ -15,7 +15,7 @@ _______________________________________________________________________________
 
 1. Why is the __name__ variable used ?
    
-   the __name__ variable( two unserscores left and two underscore right ) is a 
+   the __name__ variable( two underscores left and two underscore right ) is a 
    special python variable that gets its value depending on how we execute the
    containing script.
    
@@ -89,6 +89,21 @@ _______________________________________________________________________________
        import exportingfoo as ef
        
        ef.foo()
+       
+       ##########################################################
+       
+       ################### namescript.py ####################
+       
+       def foo():   print("The name of the __name__ variable is "+__name__)
+       
+       if __name__ == "__main__":
+           main()
+           
+       def main():
+           foo()
+           
+       #######################################################
+       OUTPUT: The name of the __name__ variable is maindef
        
        
        
